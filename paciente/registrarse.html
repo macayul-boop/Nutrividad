@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class=" text-zinc-900 px-4 py-6 border-b border-zinc-200">
+            <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
+
+                <a href="#" class="flex items-center gap-2 text-xl font-bold">
+                    <span>Nutrivida</span>
+                </a>
+
+                <button id="menu-btn" class="lg:hidden text-zinc-600  focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <nav id="menu" class="hidden w-full lg:flex lg:w-auto lg:items-center mt-4 lg:mt-0">
+                <ul class="flex flex-col lg:flex-row gap-4 font-medium">
+                    <li ><a href="../index.html" class="block hover:text-emerald-500">Inicio</a></li>
+                    <li ><a href="#" class="block hover:text-emerald-500">Servicios</a></li>
+                    <li><a href="#" class="block hover:text-emerald-500">Reservar</a></li>
+                    <li><a href="./nosotros.html" class="block hover:text-emerald-500">Nosotros</a></li>
+                    <li><a href="#" class="block hover:text-emerald-500">Tus reservas</a></li>
+                    <li><a href="./registrarse.html" class="border-2 border-emerald-500 hover:bg-emerald-500 hover:text-white text-emerald-500 px-4 py-2 rounded-lg text-center font-bold">Registrarse</a></li>
+                    <li class="mt-2 lg:mt-0"><a href="#" class="bg-emerald-700 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-center font-bold">Iniciar Sesion</a></li>
+                </ul>
+                </nav>
+            </div>
+    </header>
+
+    <main class="w-full px-2 sm:px-4 md:px-6">
+
+        <!-- Titulo -->
+        <section class="text-center mt-10 md:mt-15 ">
+            <h1 class="text-3xl sm:text-4xl font-bold text-emerald-800">Registrarse</h1>
+        </section>
+
+        <!-- Formulario -->
+        <section class="max-w-2xl mx-auto mt-10">
+            <form class="w-full border border-gray-200 rounded-xl py-8 px-4" id="formulario">
+
+                <!-- Seccion 1 -->
+                <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-5">
+                    <div class="flex flex-col">
+                        <label>Nombre</label>
+                        <input type="text" name="nombre" placeholder="Nombre" class="py-2 px-2 border border-gray-200 rounded-lg sm:mt-1.5">
+                    </div>
+                    <div class="flex flex-col">
+                        <label>Apellidos</label>
+                        <input type="text" name="apellidos" placeholder="Apellidos" class="py-2 px-2 border border-gray-200 rounded-lg sm:mt-1.5">
+                    </div>
+                </div>
+
+                <!-- Seccion 2 -->
+                <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-5 mt-2">
+                    <div class="flex flex-col">
+                        <label>Rut</label>
+                        <input type="text" name="rut" placeholder="12345678k" class="py-2 px-2 border border-gray-200 rounded-lg sm:mt-1.5">
+                    </div>
+                    <div class="flex flex-col">
+                        <label>Telefono</label>
+                        <input type="text" name="telefono" placeholder="+56912345678" class="py-2 px-2 border border-gray-200 rounded-lg sm:mt-1.5">
+                    </div>
+                </div>
+
+                <!-- Seccion 3 -->
+                <div class="w-full mt-2 flex flex-col gap-1">
+                    <div class="flex flex-col">
+                        <label>Email</label>
+                        <input type="text" name="email" placeholder="Example@gamil.com" class="py-2 px-2 border border-gray-200 rounded-lg my-2 ">
+                    </div>
+                    <div class="flex flex-col relative">
+                        <label>Contraseña</label>
+                        <input type="password" name="password" id="password" placeholder="Contraseña" class="py-2 px-2 border border-gray-200 rounded-lg my-2">
+                    </div>
+                    
+                    <div class="flex flex-col relative">
+                        <label>Confirmacion contraseña</label>
+                        <input type="password" name="confirmacionPassword" id="confirmacionPassword" placeholder="Confirma contraseña" class="py-2 px-2 border border-gray-200 rounded-lg my-2">
+                    </div>
+                </div>
+
+                <!-- Seccion boton -->
+                <section class="mt-4 flex justify-center items-center">
+                    <button class="w-lg py-2 px-4 bg-emerald-800 text-white font-semibold rounded-md">Registrase</button>
+                </section>
+            </form>
+        </section>
+        <p class="text-md sm:text-lg text-center mt-5">¿Ya tienes una cuenta? Inicia sesion <a href="#" class="font-bold text-emerald-800">aqui</a></p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-emerald-700 py-10 px-10 mt-35">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10">
+                <section class="flex flex-col justify-center items-center">
+                    <p class="text-sm text-slate-300">Nutrivida</p>
+                    <p class="text-sm text-slate-300 mt-1 w-xs text-center">NutriVida es una clínica de nutrición y dietética fundada en 2016 en Temuco, Región de La Araucanía</p>
+                </section>
+                <section class="flex flex-col justify-center items-center">
+                    <a href="#" class="text-sm text-slate-300">Terminos de servicios</a>
+                    <a href="#" class="text-sm text-slate-300 mt-1">Política de Privacidad</a>
+                </section>
+                <section class="flex flex-col justify-center items-center">
+                    <address class="flex flex-col ">
+                        <a href="#" class="text-sm text-slate-300">+56 9 1234 5678</a>
+                        <a href="mailto:correoejemplo@gmail.com" class="text-sm text-slate-300">contacto@empresa.com</a>
+                        <p class="text-sm text-slate-300">Temuco, Araucania, Chile</p>
+                    </address>
+                </section>
+            </div>
+            <section class="w-full">
+                <p class="text-center text-slate-300 text-sm mt-10">Copyright: © 2026 Nutrivida. Todos los derechos reservados.</p>
+            </section>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
+    <script src="../assets/js/menu.js"></script>
+    <Script src="../assets/js/validacion-registro.js"></Script>
+</body>
+</html>
