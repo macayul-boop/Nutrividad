@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class=" text-zinc-900 px-4 py-6 border-b border-zinc-200">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
+
+            <a href="#" class="flex items-center gap-2 text-xl font-bold">
+                <span>Nutrivida</span>
+            </a>
+
+            <button id="menu-btn" class="lg:hidden text-zinc-600  focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+            <nav id="menu" class="hidden w-full lg:flex lg:w-auto lg:items-center mt-4 lg:mt-0">
+            <ul class="flex flex-col lg:flex-row gap-4 font-medium">
+                <li ><a href="../index.html" class="block hover:text-emerald-500">Inicio</a></li>
+                <li ><a href="./servicios.html" class="block hover:text-emerald-500">Servicios</a></li>
+                <li><a href="#" class="block hover:text-emerald-500">Reservar</a></li>
+                <li><a href="./nosotros.html" class="block hover:text-emerald-500">Nosotros</a></li>
+                <li><a href="#" class="block hover:text-emerald-500">Tus reservas</a></li>
+                <li><a href="./registrarse.html" class="border-2 border-emerald-500 hover:bg-emerald-500 hover:text-white text-emerald-500 px-4 py-2 rounded-lg text-center font-bold">Registrarse</a></li>
+                <li class="mt-2 lg:mt-0"><a href="#" class="bg-emerald-700 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-center font-bold">Iniciar Sesion</a></li>
+            </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="">
+        <section class="w-full">
+
+            <!-- Hero -->
+            <section class="py-20 flex flex-col justify-center items-center bg-emerald-700" >
+                <h1 class="text-5xl font-bold text-white">Servicios</h1>
+                <p class="text-slate-300 text-md mt-2 w-[23rem] text-center">Atención personalizada presencial en Temuco o mediante Telemedicina.</p>
+                <button class="mt-5 py-3 px-8 border-2 border-emerald-300 rounded-lg text-emerald-300 hover:bg-emerald-300 hover:text-emerald-800 font-medium">Reservar</button>
+            </section>
+
+            <!-- Seccion de abajo -->
+            <section class="bg-white rounded-2xl max-w-6xl mx-auto px-8">
+                <section class="max-w-4xl mx-auto py-20 grid grid-cols-1 md:grid-cols-2 place-items-start gap-8">
+                    <section class="flex flex-col w-full">
+
+                        <!-- Columna Izquierda -->
+                        <section class="w-full border-b-4 border-emerald-800 mb-10">
+                            <h2 class="text-center text-3xl font-bold text-emerald-800 pb-3.5">Consulta</h2>
+                        </section>
+                        <section class="flex flex-col gap-4">
+                            <!-- Servicios -->
+                            <article class="w-full border-2 border-emerald-800 rounded-lg flex min-h-[8rem]">
+                                <div class="w-1/3 flex justify-center items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-emerald-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                                    </svg>
+                                </div>
+                                <div class="w-2/3 flex flex-col justify-center py-2 pr-2">
+                                    <h3 class="font-semibold">Primera consulta nutricional</h3>
+                                    <p class="text-sm mb-1.5">Evaluación inicial: anamnesis, antropometría completa y diseño del primer plan alimenticio.</p>
+                                    <div class="text-sm flex justify-between pr-6">
+                                        <span class="font-semibold text-base">$35.000</span>
+                                        <span class="text-base">50 min</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="w-full border-2 border-emerald-800 rounded-lg flex min-h-[8rem]">
+                                <div class="w-1/3 flex justify-center items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-emerald-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                                    </svg>
+                                </div>
+                                <div class="w-2/3 flex flex-col justify-center py-2 py-2 pr-2">
+                                    <h3 class="font-semibold">Control nutricional</h3>
+                                    <p class="text-sm mb-1.5">Seguimiento mensual: medición de indicadores y ajuste del plan vigente.</p>
+                                    <div class="text-sm flex justify-between pr-6">
+                                        <span class="font-semibold text-base">$25.000</span>
+                                        <span class="text-base">30 min</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="w-full border-2 border-emerald-800 rounded-lg flex min-h-[8rem]">
+                                <div class="w-1/3 flex justify-center items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-emerald-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                                    </svg>
+                                </div>
+                                <div class="w-2/3 flex flex-col justify-center py-2 py-2 pr-2">
+                                    <h3 class="font-semibold">Control nutricional quincenal</h3>
+                                    <p class="text-sm mb-1.5">Seguimiento intensivo cada 15 días. Recomendado en los primeros 2 meses.</p>
+                                    <div class="text-sm flex justify-between pr-6">
+                                        <span class="font-semibold text-base">$22.000</span>
+                                        <span class="text-base">30 min</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="w-full border-2 border-emerald-800 rounded-lg flex min-h-[8rem]">
+                                <div class="w-1/3 flex justify-center items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-emerald-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                                    </svg>
+                                </div>
+                                <div class="w-2/3 flex flex-col justify-center py-2 py-2 pr-2">
+                                    <h3 class="font-semibold">Teleconsulta nutricional</h3>
+                                    <p class="text-sm mb-1.5">Consulta de seguimiento vía videollamada. Requiere contar con consulta presencial previa.</p>
+                                    <div class="text-sm flex justify-between pr-6">
+                                        <span class="font-semibold text-base">$20.000</span>
+                                        <span class="text-base">30 min</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="w-full border-2 border-emerald-800 rounded-lg flex min-h-[8rem]">
+                                <div class="w-1/3 flex justify-center items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-emerald-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                                    </svg>
+                                </div>
+                                <div class="w-2/3 flex flex-col justify-center py-2 py-2 pr-2">
+                                    <h3 class="font-semibold">Consulta de urgencia</h3>
+                                    <p class="text-sm mb-1.5">Para pacientes que requieren atención fuera de su control habitual.</p>
+                                    <div class="text-sm flex justify-between pr-6">
+                                        <span class="font-semibold text-base">$28.000</span>
+                                        <span class="text-base">30 min</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+                    <!-- Columna Derecha -->
+                    </section>
+                    <section class="flex flex-col w-full">
+                        <section class="w-full border-b-4 border-emerald-800 mb-10">
+                            <h2 class="text-center text-3xl font-bold text-emerald-800 pb-3.5">Evaluaciones</h2>
+                        </section>
+                        <section class="flex flex-col gap-4">
+
+                            <!-- Servicios -->
+                            <article class="w-full border-2 border-emerald-800 rounded-lg flex min-h-[8rem]">
+                                <div class="w-1/3 flex justify-center items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-emerald-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184" />
+                                    </svg>
+                                </div>
+                                <div class="w-2/3 flex flex-col justify-center py-2 py-2 pr-2">
+                                    <h3 class="font-semibold">Antropometría completa</h3>
+                                    <p class="text-sm mb-1.5">Peso, talla, IMC, circunferencia de cintura, cadera, brazo y % de grasa corporal con bioimpedanciometría.</p>
+                                    <div class="text-sm flex justify-between pr-6">
+                                        <span class="font-semibold text-base">$18.000</span>
+                                        <span class="text-base">20 min</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="w-full border-2 border-emerald-800 rounded-lg flex min-h-[8rem]">
+                                <div class="w-1/3 flex justify-center items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-emerald-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184" />
+                                    </svg>
+                                </div>
+                                <div class="w-2/3 flex flex-col justify-center py-2 py-2 pr-2">
+                                    <h3 class="font-semibold">Bioimpedanciometría</h3>
+                                    <p class="text-sm mb-1.5">Medición de composición corporal: masa grasa, masa muscular, agua corporal y edad metabólica.</p>
+                                    <div class="text-sm flex justify-between pr-6">
+                                        <span class="font-semibold text-base">$12.000</span>
+                                        <span class="text-base">15 min</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="w-full border-2 border-emerald-800 rounded-lg flex min-h-[8rem]">
+                                <div class="w-1/3 flex justify-center items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-emerald-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184" />
+                                    </svg>
+                                </div>
+                                <div class="w-2/3 flex flex-col justify-center py-2 py-2 pr-2">
+                                    <h3 class="font-semibold">Encuesta de hábitos alimentarios</h3>
+                                    <p class="text-sm mb-1.5">Análisis del patrón alimentario actual. Identificación de déficit y excesos nutricionales.</p>
+                                    <div class="text-sm flex justify-between pr-6">
+                                        <span class="font-semibold text-base">$10.000</span>
+                                        <span class="text-base">20 min</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="w-full border-2 border-emerald-800 rounded-lg flex min-h-[8rem]">
+                                <div class="w-1/3 flex justify-center items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-emerald-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184" />
+                                    </svg>
+                                </div>
+                                <div class="w-2/3 flex flex-col justify-center py-2 py-2 pr-2">
+                                    <h3 class="font-semibold">Análisis de exámenes de laboratorio</h3>
+                                    <p class="text-sm mb-1.5">Interpretación de hemograma, perfil bioquímico y lipídico en contexto nutricional.</p>
+                                    <div class="text-sm flex justify-between pr-6">
+                                        <span class="font-semibold text-base">$15.000</span>
+                                        <span class="text-base">20 min</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="w-full bg-emerald-700 py-10 px-10 mt-35 border-t border-emerald-900">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10">
+                <section class="flex flex-col justify-center items-center">
+                    <p class="text-sm text-slate-300">Nutrivida</p>
+                    <p class="text-sm text-slate-300 mt-1 w-xs text-center">NutriVida es una clínica de nutrición y dietética fundada en 2016 en Temuco, Región de La Araucanía</p>
+                </section>
+                <section class="flex flex-col justify-center items-center">
+                    <a href="#" class="text-sm text-slate-300">Terminos de servicios</a>
+                    <a href="#" class="text-sm text-slate-300 mt-1">Política de Privacidad</a>
+                </section>
+                <section class="flex flex-col justify-center items-center">
+                    <address class="flex flex-col ">
+                        <a href="#" class="text-sm text-slate-300">+56 9 1234 5678</a>
+                        <a href="mailto:correoejemplo@gmail.com" class="text-sm text-slate-300">contacto@empresa.com</a>
+                        <p class="text-sm text-slate-300">Temuco, Araucania, Chile</p>
+                    </address>
+                </section>
+            </div>
+            <section class="w-full">
+                <p class="text-center text-slate-300 text-sm mt-10">Copyright: © 2026 Nutrivida. Todos los derechos reservados.</p>
+            </section>
+        </footer>
+    </main>
+
+    <script src="../assets/js/menu.js"></script>
+</body>
+</html>
