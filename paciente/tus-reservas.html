@@ -203,7 +203,134 @@
         </div>
     </section>
 
-    
+    <!-- Ventana Emergente Editar -->
+    <section id="ventana-editar" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl p-6 max-w-md w-full shadow-2xl space-y-4 text-zinc-900">
+            <form class="px-5 py-6 border border-gray-200 rounded-lg">
+
+                <!-- Primer parte -->
+                <section class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="flex flex-col gap-1.5">
+                        <label class="font-semibold">Tipo de consulta</label>
+                        <select id="tipo_consulta" name="tipo_consulta" class="py-2 py-2 border border-gray-300 rounded-lg">
+                            <option>Primera consulta nutricional</option>
+                            <option>Control nutricional (seguimiento)</option>
+                            <option>Control nutricional quincenal</option>
+                            <option>Teleconsulta nutricional</option>
+                            <option>Consulta de urgencia</option>
+                            <option>Antropometría completa</option>
+                            <option>Bioimpedanciometría</option>
+                            <option>Encuesta de hábitos alimentarios</option>
+                            <option>Análisis de exámenes de laboratorio</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label class="font-semibold">Nutricionista</label>
+                        <select id="nutricionista" name="nutricionista" class="py-2 py-2 border border-gray-300 rounded-lg">
+                            <option>Carolina Fuentes M.</option>
+                            <option>Rodrigo Sepúlveda A.</option>
+                            <option>Daniela Morales C.</option>
+                            <option>Felipe Araya R.</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- Segunda parte -->
+                 <section class="max-w-[25rem] mx-auto mt-5 flex justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Modalidad</p>
+                        <p class="text-gray-950">Presencial</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600">Precio</p>
+                        <p class="text-gray-950">$30.000</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600">Duracion</p>
+                        <p class="text-gray-950">50 min</p>
+                    </div>
+                 </section>
+
+                <!-- Tercera parte -->
+                <section class="mt-5">
+                    <div class="flex justify-between">
+                        <p class="font-semibold">Dias disponibles</p>
+                        <div class="flex gap-1.5">
+                            <button class="bg-gray-200 p-1 rounded-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5  text-gray-500">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                </svg>
+                            </button>
+                            <button class="bg-gray-200 p-1 rounded-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-500">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 mt-3 flex-wrap">
+                        <div class="w-[42px] flex flex-col py-2 px-2 bg-gray-200 text-gray-600 rounded-sm text-center">
+                            <span class=" text-center">27</span>
+                            <p class="text-sm text-center">Ago</p>
+                        </div>
+                        <div class="w-[42px] flex flex-col py-2 px-2 border-2 border-emerald-800 bg-emerald-100  text-gray-600 rounded-sm text-center">
+                            <span class="text-center text-emerald-800">28</span>
+                            <p class="text-sm text-center">Ago</p>
+                        </div>
+                        <div class="w-[42px] flex flex-col py-2 px-2  bg-gray-200  text-gray-600 rounded-sm text-center">
+                            <span class=" text-center">29</span>
+                            <p class="text-sm text-center">Ago</p>
+                        </div>
+                        <div class="w-[42px] flex flex-col py-2 px-2  bg-gray-200  text-gray-600 rounded-sm text-center">
+                            <span class=" text-center">3</span>
+                            <p class="text-sm text-center">Sep</p>
+                        </div>
+                        <div class="w-[42px] flex flex-col py-2 px-2  bg-gray-200  text-gray-600 rounded-sm text-center">
+                            <span class=" text-center">4</span>
+                            <p class="text-sm text-center">Sep</p>
+                        </div>
+                        <div class="w-[42px] flex flex-col py-2 px-2  bg-gray-200  text-gray-600 rounded-sm text-center">
+                            <span class=" text-center">5</span>
+                            <p class="text-sm text-center">Sep</p>
+                        </div>
+                        <div class="w-[42px] flex flex-col py-2 px-2  bg-gray-200  text-gray-600 rounded-sm text-center">
+                            <span class=" text-center">10</span>
+                            <p class="text-sm text-center">Sep</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cuarta parte -->
+                <section class="mt-5">
+                    <p class="font-semibold">Horas disponibles</p>
+                    <section class="flex flex-wrap gap-3">
+                        <div class="py-2 mt-2.5" id="contenedor_horas">
+                            <span class="py-2 px-3 bg-gray-200 text-gray-700 rounded-sm">14:00 PM</span>
+                        </div>
+                        <div class="py-2 mt-2.5" id="contenedor_horas">
+                            <span class="py-2 px-3 bg-emerald-700 text-white rounded-sm">15:30 PM</span>
+                        </div>
+                        <div class="py-2 mt-2.5" id="contenedor_horas">
+                            <span class="py-2 px-3 bg-gray-200 text-gray-700 rounded-sm">17:00 PM</span>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- Quinta parte -->
+                <section class="mt-8 flex justify-end gap-3.5">
+                    <button id="btn-cerrar-modal" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg text-gray-800 font-medium transition-colors">
+                        No, mantener
+                    </button>
+                    <button class="flex gap-2.5 text-white py-2 px-4 bg-emerald-800 rounded-md ">
+                        Reagendar
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                        </svg>
+                    </button>
+                </section>
+            </form>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="w-full bg-emerald-700 py-10 px-10 mt-35">
