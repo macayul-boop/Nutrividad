@@ -1,11 +1,11 @@
-// Variable
+// Variable plan nutricional
 const btnEditar = document.getElementById("btn-editar");
 const btnCancelar = document.getElementById("btn-cancelar");
 const btnGuardar = document.getElementById("btn-guardar");
 const planNutricional = document.getElementById("plan-nutricional");
-
 let contenidoPlanNutricional;
 
+// Variable crear informe
 const btnCrearInforme = document.getElementById("btn-crear-informe");
 const btnCancelarInforme = document.getElementById("btn-cancelar-informe");
 const btnGuardarInforme = document.getElementById("btn-guardar-informe");
@@ -15,6 +15,11 @@ const inputPesoCrear = document.getElementById("inputPesoCrear");
 const inputTallaCrear = document.getElementById("inputTallaCrear");
 const inputCinturaCrear = document.getElementById("inputCinturaCrear");
 const textAreaCrear = document.getElementById("extraCrear");
+
+// Variable ver informe
+const btnsVerInforme = document.querySelectorAll(".btn-ver-informe ");
+const btnOcultarInforme = document.getElementById("btn-ocultar");
+const contenedorVerInforme = document.getElementById("contenedor-ver-informe");
 
 document.addEventListener('click', (e)=>{
 
@@ -70,4 +75,17 @@ document.addEventListener('click', (e)=>{
         textAreaCrear.value = "";
     }
 
+    // Evento para ocultar el informe
+    if(e.target === btnOcultarInforme){
+        contenedorVerInforme.classList.add("hidden")
+    }
+
 })
+
+btnsVerInforme.forEach(b => {
+    b.addEventListener('click', (e) =>{
+        contenedorVerInforme.classList.remove("hidden")
+    })
+})
+
+
