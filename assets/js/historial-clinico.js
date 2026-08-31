@@ -21,6 +21,12 @@ const btnsVerInforme = document.querySelectorAll(".btn-ver-informe ");
 const btnOcultarInforme = document.getElementById("btn-ocultar");
 const contenedorVerInforme = document.getElementById("contenedor-ver-informe");
 
+// Variable editar informe
+const btnsEditarInforme = document.querySelectorAll(".btn-editar-informe");
+const btnCancelarEdit = document.getElementById("btn-cancelar-informe-editar");
+const btnGuardarEdit = document.getElementById("btn-guardar-informe-editar");
+const contenedorEditarInforme = document.getElementById("contenedor-editar-informe");
+
 document.addEventListener('click', (e)=>{
 
     // Evento boton editar plan alimentacion
@@ -80,11 +86,38 @@ document.addEventListener('click', (e)=>{
         contenedorVerInforme.classList.add("hidden")
     }
 
+
+    // Evento para cancelar editar informe 
+    if(e.target === btnCancelarEdit){
+        contenedorEditarInforme.classList.add("hidden");
+        inputPesoCrear.value = "";
+        inputTallaCrear.value = "";
+        inputCinturaCrear.value = "";
+        textAreaCrear.value = "";
+    }
+
+    // Evento para guardar editar informe 
+    if(e.target === btnGuardarEdit){
+        contenedorEditarInforme.classList.add("hidden");
+        inputPesoCrear.value = "";
+        inputTallaCrear.value = "";
+        inputCinturaCrear.value = "";
+        textAreaCrear.value = "";
+    }
+    
+
+
 })
 
 btnsVerInforme.forEach(b => {
     b.addEventListener('click', (e) =>{
         contenedorVerInforme.classList.remove("hidden")
+    })
+})
+
+btnsEditarInforme.forEach(b => {
+    b.addEventListener('click', (e)=>{
+        contenedorEditarInforme.classList.remove("hidden");
     })
 })
 
