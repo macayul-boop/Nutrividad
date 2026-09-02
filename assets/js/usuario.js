@@ -2,20 +2,13 @@
 const ventanaCrearUsuario = document.getElementById("ventana-crear-usuario");
 const ventanaNutricionista = document.getElementById("ventana-nutricionista");
 const btnCrearUsuario = document.getElementById("btn-crear-usuario");
-const btnOptionNutricionista = document.getElementById("opcion-nutricionista");
 const btnAgregarDia = document.getElementById("btn-agregar-dia");
 const contenedorDias = document.getElementById("contenedor-dias");
-const btnOptionSecretaria = document.getElementById("opcion-secretario")
-
+const opcionesRol = document.querySelectorAll('input[name="rol"]');
 document.addEventListener('click', (e) =>{
 
     if(e.target === btnCrearUsuario){
         ventanaCrearUsuario.classList.remove("hidden")
-    }
-
-    if(e.target === btnOptionNutricionista){
-        console.log("dfsdf")
-        ventanaNutricionista.classList.remove("hidden")
     }
 
     if(e.target === btnAgregarDia){
@@ -62,4 +55,16 @@ document.addEventListener('click', (e) =>{
 
     }
 
+});
+opcionesRol.forEach((opcion) => {
+    opcion.addEventListener("change", () => {
+        const esNutricionista =
+            opcion.value === "nutricionista" &&
+            opcion.checked;
+
+        ventanaNutricionista.classList.toggle(
+            "hidden",
+            !esNutricionista
+        );
+    });
 });
