@@ -5,8 +5,26 @@ const btnCrearUsuario = document.getElementById("btn-crear-usuario");
 const btnAgregarDia = document.getElementById("btn-agregar-dia");
 const contenedorDias = document.getElementById("contenedor-dias");
 const opcionesRol = document.querySelectorAll('input[name="rol"]');
-const btnConfirmarUsuario = document.getElementById("btn-confirmar-usuario");
 const mensajeUsuario = document.getElementById("mensaje-usuario");
+const formularioUsuario = document.getElementById("formulario-usuario");
+
+function limpiarFormularioUsuario() {
+    const formularioUsuario =
+        document.getElementById("formulario-usuario");
+
+    formularioUsuario.reset();
+
+    ventanaNutricionista.classList.add("hidden");
+
+    contenedorDias.innerHTML = "";
+
+    const validadorUsuario =
+        $("#formulario-usuario").data("validator");
+
+    if (validadorUsuario) {
+        validadorUsuario.resetForm();
+    }
+}
 document.addEventListener('click', (e) =>{
 
     if(e.target === btnCrearUsuario){
@@ -60,19 +78,12 @@ document.addEventListener('click', (e) =>{
 
         horario.remove();
     }
-    if (e.target.closest("#btn-confirmar-usuario")) {
+
+    if (e.target.closest("#btn-cancelar-usuario")) {
         ventanaCrearUsuario.classList.add("hidden");
 
-        mensajeUsuario.textContent =
-            "Usuario creado correctamente";
-
-        mensajeUsuario.classList.remove("hidden");
-
-        setTimeout(() => {
-            mensajeUsuario.classList.add("hidden");
-        }, 3000);
+        limpiarFormularioUsuario();
     }
-
 });
 opcionesRol.forEach((opcion) => {
     opcion.addEventListener("change", () => {

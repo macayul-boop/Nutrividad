@@ -158,41 +158,43 @@
 
     <!-- Ventana crear usuario -->
     <section id="ventana-crear-usuario" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
-        <section class="max-w-2xl w-full p-6 bg-white rounded-xl">
+        <!-- formulario crear usuario -->
+        <form  id="formulario-usuario" class="max-w-2xl w-full p-6 bg-white rounded-xl">
             <h2 class="text-lg font-semibold mb-4">Crear Usuario</h2>
             <div class="flex flex-col">
                 <label>Rut</label>
-                <input type="text" placeholder="12345678k" class="py-1.5 px-2 border border-gray-300 rounded-lg">
+                <input id= "rut-usuario" name="rut" type="text" placeholder="12345678k" class="py-1.5 px-2 border border-gray-300 rounded-lg">
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 mt-2.5">
                 <div class="flex flex-col">
                     <label>Nombre</label>
-                    <input type="text" placeholder="Nombre" class="py-1.5 px-2 border border-gray-300 rounded-lg">
+                    <input type= "text" id= "nombre-usuario" name="nombre"  placeholder="Nombre" class="py-1.5 px-2 border border-gray-300 rounded-lg">
                 </div>
                 <div class="flex flex-col">
                     <label>Apellidos</label>
-                    <input type="text" placeholder="Apellidos" class="py-1.5 px-2 border border-gray-300 rounded-lg">
+                    <input id="apellidos-usuario" name="apellidos" type="text" placeholder="Apellidos" class="py-1.5 px-2 border border-gray-300 rounded-lg">
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 mt-2.5">
                 <div class="flex flex-col">
                     <label>Telefono</label>
-                    <input type="text" placeholder="+56963391573" class="py-1.5 px-2 border border-gray-300 rounded-lg">
+                    <input  id="telefono-usuario" name="telefono" type="tel" placeholder="+56963391573" class="py-1.5 px-2 border border-gray-300 rounded-lg">
                 </div>
                 <div class="flex flex-col">
                     <label>Email</label>
-                    <input type="text" placeholder="Example@gmail.com" class="py-1.5 px-2 border border-gray-300 rounded-lg">
+                    <input  id="email-usuario" name="email" type="email" placeholder="Example@gmail.com" class="py-1.5 px-2 border border-gray-300 rounded-lg">
                 </div>
             </div>
             <div class="flex flex-col mt-2.5">
                 <label>Contraseña</label>
-                <input type="text" placeholder="Contraseña" class="py-1.5 px-2 border border-gray-300 rounded-lg">
+                <input id="contraseña-usuario" name="contraseña" type="password" placeholder="Contraseña" class="py-1.5 px-2 border border-gray-300 rounded-lg">
             </div>
-            <div class="mt-2.5">
+            <!-- Eleccion de rol -->
+            <div id="grupo-rol"  class="mt-2.5" >
                 <p class="mb-2 text-md">Escoge el rol</p>
 
                 <input type="radio" id="opcion-nutricionista" name="rol" value="nutricionista">
-                <label id="" for="secundaria">Nutricionista</label><br>
+                <label for="opcion-nutricionista">Nutricionista</label><br>
                 
                 <input type="radio" id="opcion-secretario" name="rol" value="secretario">
                 <label for="opcion-secretario">Secretario/a</label><br>
@@ -277,16 +279,17 @@
             </section>
 
             <section class="flex justify-end gap-2 mt-8">
-                <button class="py-1.5 px-4 bg-gray-300 text-gray-500 rounded-lg">Cancelar</button>
-                <button id="btn-confirmar-usuario"  type="button" class="py-1.5 px-4 bg-green-800 text-white rounded-lg">Crear</button>
+                <button id="btn-cancelar-usuario" type="button" class="py-1.5 px-4 bg-gray-300 text-gray-500 rounded-lg">Cancelar</button>
+                <button id="btn-confirmar-usuario"  type="submit" class="py-1.5 px-4 bg-green-800 text-white rounded-lg">Crear</button>
             </section>
 
-        </section>
+        </form>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
     <script src="../assets/js/menu-lateral.js"></script>
     <script src="../assets/js/usuario.js"></script>
+    <script src="../assets/js/validacion-usuario.js"></script>
 </body>
 </html>
