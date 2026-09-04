@@ -7,6 +7,19 @@ const contenedorDias = document.getElementById("contenedor-dias");
 const opcionesRol = document.querySelectorAll('input[name="rol"]');
 const mensajeUsuario = document.getElementById("mensaje-usuario");
 const formularioUsuario = document.getElementById("formulario-usuario");
+// Variable ver Usuario
+const btnVerUsuario = document.getElementById("btn-ver-usuario");
+const btnOcultarUsuario = document.getElementById("btn-ocultar-usuario");
+const contenedorVerUsuario = document.getElementById("contenedor-ver-usuario");
+// Variable Editar Usuario
+const btnEditarUsuario = document.getElementById("btn-editar-usuario");
+const tituloFormularioUsuario = document.getElementById("titulo-formulario-usuario");
+const btnConfirmarUsuario = document.getElementById("btn-confirmar-usuario");
+let modoEdicionUsuario = false;
+// variables  eliminar usuario
+const usuarioListado = document.getElementById("usuario-listado");
+const btnEliminarUsuario = document.getElementById("btn-eliminar-usuario");
+
 
 function limpiarFormularioUsuario() {
     const formularioUsuario =
@@ -25,10 +38,23 @@ function limpiarFormularioUsuario() {
         validadorUsuario.resetForm();
     }
 }
+
 document.addEventListener('click', (e) =>{
 
-    if(e.target === btnCrearUsuario){
-        ventanaCrearUsuario.classList.remove("hidden")
+    if (e.target.closest("#btn-crear-usuario")) {
+        modoEdicionUsuario = false;
+        limpiarFormularioUsuario();
+        tituloFormularioUsuario.textContent = "Crear Usuario";
+        btnConfirmarUsuario.textContent = "Crear";
+        ventanaCrearUsuario.classList.remove("hidden");
+    }
+
+    if (e.target.closest("#btn-editar-usuario")) {
+        modoEdicionUsuario = true;
+        limpiarFormularioUsuario();
+        tituloFormularioUsuario.textContent = "Editar Usuario";
+        btnConfirmarUsuario.textContent = "Guardar";
+        ventanaCrearUsuario.classList.remove("hidden");
     }
 
     if (e.target.closest("#btn-agregar-dia")){
@@ -69,31 +95,55 @@ document.addEventListener('click', (e) =>{
             contenedorDias.insertAdjacentHTML('beforeend', nuevoHTML);
         }
     }
-    const btnEliminarHorario =
-        e.target.closest(".btn-eliminar-horario");
-
+    const btnEliminarHorario = e.target.closest(".btn-eliminar-horario");
+    
     if (btnEliminarHorario) {
-        const horario =
-            btnEliminarHorario.closest(".horario-item");
-
+        const horario = btnEliminarHorario.closest(".horario-item");
         horario.remove();
     }
 
     if (e.target.closest("#btn-cancelar-usuario")) {
         ventanaCrearUsuario.classList.add("hidden");
-
         limpiarFormularioUsuario();
+        modoEdicionUsuario = false;
+        tituloFormularioUsuario.textContent = "Crear Usuario";
+        btnConfirmarUsuario.textContent ="Crear";
+        
     }
 });
+
+btnVerUsuario.addEventListener("click", () => {
+    contenedorVerUsuario.classList.remove("hidden");
+});
+
+btnOcultarUsuario.addEventListener("click", () => {
+    contenedorVerUsuario.classList.add("hidden");
+});
+
 opcionesRol.forEach((opcion) => {
     opcion.addEventListener("change", () => {
-        const esNutricionista =
-            opcion.value === "nutricionista" &&
-            opcion.checked;
-
-        ventanaNutricionista.classList.toggle(
-            "hidden",
-            !esNutricionista
-        );
+        const esNutricionista = opcion.value === "nutricionista" &&opcion.checked;
+        ventanaNutricionista.classList.toggle( "hidden", !esNutricionista );
     });
+});
+btnEliminarUsuario.addEventListener("click", () => {
+    const confirmarEliminacion = confirm(
+        "¿Está seguro de eliminar este usuario?"
+    );
+
+    if (!confirmarEliminacion) {
+        return;
+    }
+
+    usuarioListado.classList.add("hidden");
+    contenedorVerUsuario.classList.add("hidden");
+
+    mensajeUsuario.textContent =
+        "Usuario eliminado correctamente";
+
+    mensajeUsuario.classList.remove("hidden");
+
+    setTimeout(() => {
+        mensajeUsuario.classList.add("hidden");
+    }, 3000);
 });
