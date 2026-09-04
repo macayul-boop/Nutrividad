@@ -7,6 +7,10 @@ const contenedorDias = document.getElementById("contenedor-dias");
 const opcionesRol = document.querySelectorAll('input[name="rol"]');
 const mensajeUsuario = document.getElementById("mensaje-usuario");
 const formularioUsuario = document.getElementById("formulario-usuario");
+// Variable editar Usuario
+const btnVerUsuario =document.getElementById("btn-ver-usuario");
+const btnOcultarUsuario =document.getElementById("btn-ocultar-usuario");
+const contenedorVerUsuario =document.getElementById("contenedor-ver-usuario");
 
 function limpiarFormularioUsuario() {
     const formularioUsuario =
@@ -85,6 +89,15 @@ document.addEventListener('click', (e) =>{
         limpiarFormularioUsuario();
     }
 });
+
+btnVerUsuario.addEventListener("click", () => {
+    contenedorVerUsuario.classList.remove("hidden");
+});
+
+btnOcultarUsuario.addEventListener("click", () => {
+    contenedorVerUsuario.classList.add("hidden");
+});
+
 opcionesRol.forEach((opcion) => {
     opcion.addEventListener("change", () => {
         const esNutricionista =
