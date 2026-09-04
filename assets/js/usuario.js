@@ -16,6 +16,9 @@ const btnEditarUsuario = document.getElementById("btn-editar-usuario");
 const tituloFormularioUsuario = document.getElementById("titulo-formulario-usuario");
 const btnConfirmarUsuario = document.getElementById("btn-confirmar-usuario");
 let modoEdicionUsuario = false;
+// variables  eliminar usuario
+const usuarioListado = document.getElementById("usuario-listado");
+const btnEliminarUsuario = document.getElementById("btn-eliminar-usuario");
 
 
 function limpiarFormularioUsuario() {
@@ -92,13 +95,10 @@ document.addEventListener('click', (e) =>{
             contenedorDias.insertAdjacentHTML('beforeend', nuevoHTML);
         }
     }
-    const btnEliminarHorario =
-        e.target.closest(".btn-eliminar-horario");
-
+    const btnEliminarHorario = e.target.closest(".btn-eliminar-horario");
+    
     if (btnEliminarHorario) {
-        const horario =
-            btnEliminarHorario.closest(".horario-item");
-
+        const horario = btnEliminarHorario.closest(".horario-item");
         horario.remove();
     }
 
@@ -122,13 +122,28 @@ btnOcultarUsuario.addEventListener("click", () => {
 
 opcionesRol.forEach((opcion) => {
     opcion.addEventListener("change", () => {
-        const esNutricionista =
-            opcion.value === "nutricionista" &&
-            opcion.checked;
-
-        ventanaNutricionista.classList.toggle(
-            "hidden",
-            !esNutricionista
-        );
+        const esNutricionista = opcion.value === "nutricionista" &&opcion.checked;
+        ventanaNutricionista.classList.toggle( "hidden", !esNutricionista );
     });
+});
+btnEliminarUsuario.addEventListener("click", () => {
+    const confirmarEliminacion = confirm(
+        "¿Está seguro de eliminar este usuario?"
+    );
+
+    if (!confirmarEliminacion) {
+        return;
+    }
+
+    usuarioListado.classList.add("hidden");
+    contenedorVerUsuario.classList.add("hidden");
+
+    mensajeUsuario.textContent =
+        "Usuario eliminado correctamente";
+
+    mensajeUsuario.classList.remove("hidden");
+
+    setTimeout(() => {
+        mensajeUsuario.classList.add("hidden");
+    }, 3000);
 });
