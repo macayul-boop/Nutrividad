@@ -128,7 +128,7 @@ opcionesRol.forEach((opcion) => {
 });
 btnEliminarUsuario.addEventListener("click", () => {
     const confirmarEliminacion = confirm(
-        "¿Está seguro de eliminar este usuario?"
+        "¿Está seguro de eliminar este Empleado ?"
     );
 
     if (!confirmarEliminacion) {
@@ -139,7 +139,7 @@ btnEliminarUsuario.addEventListener("click", () => {
     contenedorVerUsuario.classList.add("hidden");
 
     mensajeUsuario.textContent =
-        "Usuario eliminado correctamente";
+        "Empleado  eliminado correctamente";
 
     mensajeUsuario.classList.remove("hidden");
 
