@@ -7,10 +7,16 @@ const contenedorDias = document.getElementById("contenedor-dias");
 const opcionesRol = document.querySelectorAll('input[name="rol"]');
 const mensajeUsuario = document.getElementById("mensaje-usuario");
 const formularioUsuario = document.getElementById("formulario-usuario");
-// Variable editar Usuario
-const btnVerUsuario =document.getElementById("btn-ver-usuario");
-const btnOcultarUsuario =document.getElementById("btn-ocultar-usuario");
-const contenedorVerUsuario =document.getElementById("contenedor-ver-usuario");
+// Variable ver Usuario
+const btnVerUsuario = document.getElementById("btn-ver-usuario");
+const btnOcultarUsuario = document.getElementById("btn-ocultar-usuario");
+const contenedorVerUsuario = document.getElementById("contenedor-ver-usuario");
+// Variable Editar Usuario
+const btnEditarUsuario = document.getElementById("btn-editar-usuario");
+const tituloFormularioUsuario = document.getElementById("titulo-formulario-usuario");
+const btnConfirmarUsuario = document.getElementById("btn-confirmar-usuario");
+let modoEdicionUsuario = false;
+
 
 function limpiarFormularioUsuario() {
     const formularioUsuario =
@@ -29,10 +35,23 @@ function limpiarFormularioUsuario() {
         validadorUsuario.resetForm();
     }
 }
+
 document.addEventListener('click', (e) =>{
 
-    if(e.target === btnCrearUsuario){
-        ventanaCrearUsuario.classList.remove("hidden")
+    if (e.target.closest("#btn-crear-usuario")) {
+        modoEdicionUsuario = false;
+        limpiarFormularioUsuario();
+        tituloFormularioUsuario.textContent = "Crear Usuario";
+        btnConfirmarUsuario.textContent = "Crear";
+        ventanaCrearUsuario.classList.remove("hidden");
+    }
+
+    if (e.target.closest("#btn-editar-usuario")) {
+        modoEdicionUsuario = true;
+        limpiarFormularioUsuario();
+        tituloFormularioUsuario.textContent = "Editar Usuario";
+        btnConfirmarUsuario.textContent = "Guardar";
+        ventanaCrearUsuario.classList.remove("hidden");
     }
 
     if (e.target.closest("#btn-agregar-dia")){
@@ -85,8 +104,11 @@ document.addEventListener('click', (e) =>{
 
     if (e.target.closest("#btn-cancelar-usuario")) {
         ventanaCrearUsuario.classList.add("hidden");
-
         limpiarFormularioUsuario();
+        modoEdicionUsuario = false;
+        tituloFormularioUsuario.textContent = "Crear Usuario";
+        btnConfirmarUsuario.textContent ="Crear";
+        
     }
 });
 

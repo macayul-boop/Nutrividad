@@ -73,13 +73,16 @@ $(document).ready(function(){
         submitHandler: function () {
             ventanaCrearUsuario.classList.add("hidden");
 
-            mensajeUsuario.textContent =
-                "Usuario creado correctamente";
+            if (modoEdicionUsuario){
+                mensajeUsuario.textContent = "Usuario editado correctamente";
+            } else {
+                mensajeUsuario.textContent = "Usuario creado correctamente";
+            }
 
             mensajeUsuario.classList.remove("hidden");
 
             limpiarFormularioUsuario();
-
+            modoEdicionUsuario = false;
             setTimeout(() => {
                 mensajeUsuario.classList.add("hidden");
             }, 3000);
