@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes </title>
+    <title>Servicios </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../assets/css/style.css" rel="stylesheet">
 </head>
@@ -24,7 +24,7 @@
             <section class="p-2.5 mt-1 flex items-center justify-between rounded-md ">
                 <div class="flex flex-col ml-3 text-start">
                     <h1 class="text-[15px] text-xl text-gray-200 font-bold">Liam </h1>
-                    <p class="text-xs">Adminitrador</p>
+                    <p class="text-xs">Servicios</p>
                 </div>
                 <button id="btn-cerrar-menu">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7 text-white lg:hidden cursor-pointer">
@@ -49,24 +49,23 @@
                     </svg>
                     <span class="text-[15px] ml-4 text-gray-200">Empleados</span>
                 </a>
-                <a href="./cliente.html" class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  bg-blue-600">
+                <a href="./cliente.html" class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                     </svg>
                     <span class="text-[15px] ml-4 text-gray-200">Clientes</span>
                 </a>
-                <a href="./reserva.html" class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <a href="./reserva.html" class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                     </svg>
 
                     <span class="text-[15px] ml-4 text-gray-200">Reservas</span>
                 </a>
-                <a href="./servicio.html" class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600">
+                <a href="./servicio.html" class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-blue-600">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                     </svg>
-
                     <span class="text-[15px] ml-4 text-gray-200">Servicios</span>
                 </a>
             </section>
@@ -89,9 +88,14 @@
     <main class="max-w-8xl overflow-x-hidden lg:ml-[300px] ml-0 lg:ml-20 p-4">
         <!-- header -->
         <section class="bg-gray-900 w-full mt-15 lg:mt-1 rounded-md">
-            <h1 class="text-3xl font-bold text-white py-4 px-8">Clientes</h1>
+            <h1 class="text-3xl font-bold text-white py-4 px-8">Reservas</h1>
         </section>
-
+        <!-- Mensaje de confirmación -->
+        <p
+            id="mensaje-reserva"
+            class="hidden mt-4 px-4 py-3 bg-green-100 text-green-800 rounded-lg"
+            role="status"
+        ></p>
         <!-- Buscador -->
         <section class="max-w-4xl mt-6 flex gap-2.5">
             <input type="text" class="border border-gray-300 rounded-xl py-2 px-4 outline-none w-full" placeholder="Buscador">
@@ -100,47 +104,40 @@
 
         <!-- Contenedor boton -->
         <section class="max-w-7xl w-full flex justify-end py-4">
-            <button id="btn-crear-usuario" class="px-4 py-1.5 bg-green-800 text-white text-lg font-semibold rounded-lg">Crear cliente</button>
+            <button id="btn-crear-reserva" type="button"class="px-4 py-1.5 bg-green-800 text-white text-lg font-semibold rounded-lg">Crear servicio</button>
         </section>
-        <!-- Contenedor mensaje -->
-        <p
-            id="mensaje-usuario"
-            class="hidden max-w-7xl w-full mb-3 py-2 px-4 bg-green-800 text-white rounded-lg"
-            role="status"
-        ></p>
 
-        <!-- Contenedor usuarios -->
-        <section id="lista-usuarios"class="max-w-7xl w-full h-[35rem] overflow-y-scroll border border-gray-200 rounded-lg">
-            <div class="w-full grid py-2 bg-gray-900 text-white px-4" style="grid-template-columns: 40px repeat(3, minmax(0, 1fr));">
+        <!-- Contenedor reservas -->
+        <section class="max-w-7xl w-full h-[35rem] overflow-y-scroll border border-gray-200 rounded-lg">
+            <div class="w-full grid py-2 bg-gray-900 text-white px-4" style="grid-template-columns: 40px  2fr repeat(5, minmax(0, 1fr));">
                 <div>Id</div>
                 <div>Nombre</div>
-                <div>Rut</div>
+                <div>Categoría</div>
+                <div>Modalidad</div>
+                <div>Precio</div>
+                <div>Duración</div>
                 <div class="flex justify-end">Acciones</div>
 
 
             </div>
-            
-            <article id="usuario-listado" class="w-full grid py-3 px-4" style="grid-template-columns: 40px repeat(3, minmax(0, 1fr));">
+            <!--  reservas -->
+            <article id="reserva-listado" class=" w-full grid py-3 px-4" style="grid-template-columns: 40px 2fr repeat(5, minmax(0, 1fr));">
                 <p class="flex items-center">1</p>
-                <p class="flex items-center">Camila Soto</p>
-                <p class="flex items-center">11.111.111-1</p>
+                <p class="flex items-center">Primera consulta nutricional</p>
+                <p class="flex items-center">Consulta</p>
+                <p class="flex items-center">Presencial</p>
+                <p class="flex items-center">$30.000</p> 
+                <p class="flex items-center">50 min</p>  
                 <div class="w-full flex justify-end gap-2">
                    <!-- Boton editar-->             
-                   <button id="btn-editar-usuario" type="button" aria-label="Editar empleado" class="cursor-pointer">
+                   <button type="button" aria-label="Editar servicio"  class="btn-editar-servicio cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487 18.55 2.8a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931ZM16.862 4.487 19.5 7.125M18 14.25v4.5A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6h4.5"/>
                         </svg>
                     </button>
-                    <!-- Boton ojo-->  
-                    <button id="btn-ver-usuario" type="button"  class="cursor-pointer" aria-label="Ver empleado">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        </svg>
-                    </button>
 
                     <!-- Boton eliminar--> 
-                    <button id="btn-eliminar-usuario" type="button" aria-label="Eliminar empleado " class="cursor-pointer">
+                    <button  id="btn-eliminar-servicio" type="button" aria-label="Eliminar servicio"  class="cursor-pointer"  >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
                         </svg>
@@ -148,27 +145,23 @@
 
                 </div>
             </article>
-                        <article id="usuario-listado" class="w-full grid py-3 px-4" style="grid-template-columns: 40px repeat(3, minmax(0, 1fr));">
+            <article id="reserva-listado" class=" w-full grid py-3 px-4" style="grid-template-columns: 40px 2fr repeat(5, minmax(0, 1fr));">
                 <p class="flex items-center">2</p>
-                <p class="flex items-center">Matías Rojas</p>
-                <p class="flex items-center">22.222.222-2</p>
+                <p class="flex items-center">Control nutricional</p>
+                <p class="flex items-center">Consulta</p>
+                <p class="flex items-center">Presencial</p>
+                <p class="flex items-center">$25.000</p> 
+                <p class="flex items-center">40 min</p> 
                 <div class="w-full flex justify-end gap-2">
                    <!-- Boton editar-->             
-                   <button id="btn-editar-usuario" type="button" aria-label="Editar empleado" class="cursor-pointer">
+                   <button type="button" aria-label="Editar servicio"  class="btn-editar-servicio cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487 18.55 2.8a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931ZM16.862 4.487 19.5 7.125M18 14.25v4.5A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6h4.5"/>
                         </svg>
                     </button>
-                    <!-- Boton ojo-->  
-                    <button id="btn-ver-usuario" type="button"  class="cursor-pointer" aria-label="Ver empleado">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        </svg>
-                    </button>
 
                     <!-- Boton eliminar--> 
-                    <button id="btn-eliminar-usuario" type="button" aria-label="Eliminar empleado " class="cursor-pointer">
+                    <button  type="button" aria-label="Eliminar servicio"  class="cursor-pointer"  >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
                         </svg>
@@ -176,55 +169,47 @@
 
                 </div>
             </article>
-                        <article id="usuario-listado" class="w-full grid py-3 px-4" style="grid-template-columns: 40px repeat(3, minmax(0, 1fr));">
+            <article id="reserva-listado" class=" w-full grid py-3 px-4" style="grid-template-columns: 40px 2fr repeat(5, minmax(0, 1fr));">
                 <p class="flex items-center">3</p>
-                <p class="flex items-center">Valentina Muñoz</p>
-                <p class="flex items-center">33.333.333-3</p>
+                <p class="flex items-center">Control nutricional quincenal</p>
+                <p class="flex items-center">Consulta</p>
+                <p class="flex items-center">Presencial</p>
+                <p class="flex items-center">$22.000</p> 
+                <p class="flex items-center">30 min</p>  
                 <div class="w-full flex justify-end gap-2">
                    <!-- Boton editar-->             
-                   <button id="btn-editar-usuario" type="button" aria-label="Editar empleado" class="cursor-pointer">
+                   <button type="button" aria-label="Editar servicio"  class="btn-editar-servicio cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487 18.55 2.8a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931ZM16.862 4.487 19.5 7.125M18 14.25v4.5A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6h4.5"/>
                         </svg>
                     </button>
-                    <!-- Boton ojo-->  
-                    <button id="btn-ver-usuario" type="button"  class="cursor-pointer" aria-label="Ver empleado">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        </svg>
-                    </button>
 
                     <!-- Boton eliminar--> 
-                    <button id="btn-eliminar-usuario" type="button" aria-label="Eliminar empleado " class="cursor-pointer">
+                    <button  type="button" aria-label="Eliminar servicio"  class="cursor-pointer"  >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
                         </svg>
-                        </button>
+                    </button>
 
                 </div>
             </article>
-                        <article id="usuario-listado" class="w-full grid py-3 px-4" style="grid-template-columns: 40px repeat(3, minmax(0, 1fr));">
+            <article id="reserva-listado" class=" w-full grid py-3 px-4" style="grid-template-columns: 40px 2fr repeat(5, minmax(0, 1fr));">
                 <p class="flex items-center">4</p>
-                <p class="flex items-center">Sebastián Herrera</p>
-                <p class="flex items-center">44.444.444-4</p>
+                <p class="flex items-center">Antropometría completa</p>
+                <p class="flex items-center">Consulta</p>
+                <p class="flex items-center">Online</p>
+                <p class="flex items-center">$25.000</p> 
+                <p class="flex items-center">45 min</p> 
                 <div class="w-full flex justify-end gap-2">
                    <!-- Boton editar-->             
-                   <button id="btn-editar-usuario" type="button" aria-label="Editar empleado" class="cursor-pointer">
+                   <button type="button" aria-label="Editar servicio"  class="btn-editar-servicio cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487 18.55 2.8a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931ZM16.862 4.487 19.5 7.125M18 14.25v4.5A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6h4.5"/>
                         </svg>
                     </button>
-                    <!-- Boton ojo-->  
-                    <button id="btn-ver-usuario" type="button"  class="cursor-pointer" aria-label="Ver empleado">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        </svg>
-                    </button>
 
                     <!-- Boton eliminar--> 
-                    <button id="btn-eliminar-usuario" type="button" aria-label="Eliminar empleado " class="cursor-pointer">
+                    <button  type="button" aria-label="Eliminar servicio"  class="cursor-pointer"  >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
                         </svg>
@@ -232,27 +217,23 @@
 
                 </div>
             </article>
-                        <article id="usuario-listado" class="w-full grid py-3 px-4" style="grid-template-columns: 40px repeat(3, minmax(0, 1fr));">
+            <article id="reserva-listado" class=" w-full grid py-3 px-4" style="grid-template-columns: 40px 2fr repeat(5, minmax(0, 1fr));">
                 <p class="flex items-center">5</p>
-                <p class="flex items-center">Fernanda Castillo</p>
-                <p class="flex items-center">55.555.555-5</p>
+                <p class="flex items-center">Consulta de urgencia</p>
+                <p class="flex items-center">Consulta</p>
+                <p class="flex items-center">Presencial</p>
+                <p class="flex items-center">$35.000</p> 
+                <p class="flex items-center">30 min</p> 
                 <div class="w-full flex justify-end gap-2">
                    <!-- Boton editar-->             
-                   <button id="btn-editar-usuario" type="button" aria-label="Editar empleado" class="cursor-pointer">
+                   <button type="button" aria-label="Editar servicio"  class="btn-editar-servicio cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487 18.55 2.8a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931ZM16.862 4.487 19.5 7.125M18 14.25v4.5A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6h4.5"/>
                         </svg>
                     </button>
-                    <!-- Boton ojo-->  
-                    <button id="btn-ver-usuario" type="button"  class="cursor-pointer" aria-label="Ver empleado">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        </svg>
-                    </button>
 
                     <!-- Boton eliminar--> 
-                    <button id="btn-eliminar-usuario" type="button" aria-label="Eliminar empleado " class="cursor-pointer">
+                    <button  type="button" aria-label="Eliminar servicio"  class="cursor-pointer"  >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
                         </svg>
@@ -260,27 +241,23 @@
 
                 </div>
             </article>
-                        <article id="usuario-listado" class="w-full grid py-3 px-4" style="grid-template-columns: 40px repeat(3, minmax(0, 1fr));">
+            <article id="reserva-listado" class=" w-full grid py-3 px-4" style="grid-template-columns: 40px 2fr repeat(5, minmax(0, 1fr));">
                 <p class="flex items-center">6</p>
-                <p class="flex items-center">Nicolás Contreras</p>
-                <p class="flex items-center">66.666.666-6</p>
+                <p class="flex items-center">Antropometría completa</p>
+                <p class="flex items-center">Evaluación</p>
+                <p class="flex items-center">Presencial</p>
+                <p class="flex items-center">$18.000</p> 
+                <p class="flex items-center">25 min</p> 
                 <div class="w-full flex justify-end gap-2">
                    <!-- Boton editar-->             
-                   <button id="btn-editar-usuario" type="button" aria-label="Editar empleado" class="cursor-pointer">
+                   <button type="button" aria-label="Editar servicio"  class="btn-editar-servicio cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487 18.55 2.8a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931ZM16.862 4.487 19.5 7.125M18 14.25v4.5A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6h4.5"/>
                         </svg>
                     </button>
-                    <!-- Boton ojo-->  
-                    <button id="btn-ver-usuario" type="button"  class="cursor-pointer" aria-label="Ver empleado">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        </svg>
-                    </button>
 
                     <!-- Boton eliminar--> 
-                    <button id="btn-eliminar-usuario" type="button" aria-label="Eliminar empleado " class="cursor-pointer">
+                    <button  type="button" aria-label="Eliminar servicio"  class="cursor-pointer"  >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
                         </svg>
@@ -288,27 +265,23 @@
 
                 </div>
             </article>
-                        <article id="usuario-listado" class="w-full grid py-3 px-4" style="grid-template-columns: 40px repeat(3, minmax(0, 1fr));">
+            <article id="reserva-listado" class=" w-full grid py-3 px-4" style="grid-template-columns: 40px 2fr repeat(5, minmax(0, 1fr));">
                 <p class="flex items-center">7</p>
-                <p class="flex items-center">Daniela Fuentes</p>
-                <p class="flex items-center">77.777.777-7</p>
+                <p class="flex items-center">Bioimpedanciometría</p>
+                <p class="flex items-center">Evaluación</p>
+                <p class="flex items-center">Presencial</p>
+                <p class="flex items-center">$20.000</p> 
+                <p class="flex items-center">30 min</p> 
                 <div class="w-full flex justify-end gap-2">
                    <!-- Boton editar-->             
-                   <button id="btn-editar-usuario" type="button" aria-label="Editar empleado" class="cursor-pointer">
+                   <button type="button" aria-label="Editar servicio"  class="btn-editar-servicio cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487 18.55 2.8a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931ZM16.862 4.487 19.5 7.125M18 14.25v4.5A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6h4.5"/>
                         </svg>
                     </button>
-                    <!-- Boton ojo-->  
-                    <button id="btn-ver-usuario" type="button"  class="cursor-pointer" aria-label="Ver empleado">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        </svg>
-                    </button>
 
                     <!-- Boton eliminar--> 
-                    <button id="btn-eliminar-usuario" type="button" aria-label="Eliminar empleado " class="cursor-pointer">
+                    <button  type="button" aria-label="Eliminar servicio"  class="cursor-pointer"  >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
                         </svg>
@@ -316,27 +289,47 @@
 
                 </div>
             </article>
-                        <article id="usuario-listado" class="w-full grid py-3 px-4" style="grid-template-columns: 40px repeat(3, minmax(0, 1fr));">
+            <article id="reserva-listado" class=" w-full grid py-3 px-4" style="grid-template-columns: 40px 2fr repeat(5, minmax(0, 1fr));">
                 <p class="flex items-center">8</p>
-                <p class="flex items-center">Tomás Morales</p>
-                <p class="flex items-center">88.888.888-8</p>
+                <p class="flex items-center">Evaluación de hábitos alimentarios</p>
+                <p class="flex items-center">Evaluación</p>
+                <p class="flex items-center">Presencial</p>
+                <p class="flex items-center">$20.000</p> 
+                <p class="flex items-center">40 min</p>  
                 <div class="w-full flex justify-end gap-2">
                    <!-- Boton editar-->             
-                   <button id="btn-editar-usuario" type="button" aria-label="Editar empleado" class="cursor-pointer">
+                   <button type="button" aria-label="Editar servicio"  class="btn-editar-servicio cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487 18.55 2.8a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931ZM16.862 4.487 19.5 7.125M18 14.25v4.5A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6h4.5"/>
                         </svg>
                     </button>
-                    <!-- Boton ojo-->  
-                    <button id="btn-ver-usuario" type="button"  class="cursor-pointer" aria-label="Ver empleado">
+
+                    <!-- Boton eliminar--> 
+                    <button  type="button" aria-label="Eliminar servicio"  class="cursor-pointer"  >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
+                        </svg>
+                        </button>
+
+                </div>
+            </article>
+            <article id="reserva-listado" class=" w-full grid py-3 px-4" style="grid-template-columns: 40px 2fr repeat(5, minmax(0, 1fr));">
+                <p class="flex items-center">9</p>
+                <p class="flex items-center">Análisis de exámenes de laboratorio</p>
+                <p class="flex items-center">Evaluación</p>
+                <p class="flex items-center">Online</p>
+                <p class="flex items-center">$20.000</p> 
+                <p class="flex items-center">30 min</p>  
+                <div class="w-full flex justify-end gap-2">
+                   <!-- Boton editar-->             
+                   <button type="button" aria-label="Editar servicio"  class="btn-editar-servicio cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487 18.55 2.8a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931ZM16.862 4.487 19.5 7.125M18 14.25v4.5A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6h4.5"/>
                         </svg>
                     </button>
 
                     <!-- Boton eliminar--> 
-                    <button id="btn-eliminar-usuario" type="button" aria-label="Eliminar empleado " class="cursor-pointer">
+                    <button  type="button" aria-label="Eliminar servicio"  class="cursor-pointer"  >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
                         </svg>
@@ -345,104 +338,13 @@
                 </div>
             </article>
 
-
         </section>
-        <!-- Vista información del cliente -->
-        <section id="contenedor-ver-usuario"class="hidden w-full mt-8 px-4 py-6 border border-gray-200 rounded-lg">
-            <div class="flex justify-between items-center">
-                <h2 class="text-2xl font-semibold">
-                    Información del cliente
-                </h2>
-
-                <button
-                    id="btn-ocultar-usuario"
-                    type="button"
-                    class="py-2 px-4 bg-gray-200 text-gray-700 rounded-lg cursor-pointer"
-                >
-                    Ocultar
-                </button>
-            </div>
-
-            <section class="mt-5 flex flex-wrap gap-8">
-                <div>
-                    <p class="text-sm text-gray-500">Nombre</p>
-                    <p class="text-gray-800">Daniel Escalante</p>
-                </div>
-
-                <div>
-                    <p class="text-sm text-gray-500">RUT</p>
-                    <p class="text-gray-800">22.427.485-6</p>
-                </div>
-
-                <div>
-                    <p class="text-sm text-gray-500">Teléfono</p>
-                    <p class="text-gray-800">+56 948392182</p>
-                </div>
-
-                <div>
-                    <p class="text-sm text-gray-500">Correo</p>
-                    <p class="text-gray-800">Daniel@gmail.cl</p>
-                </div>
-
-                <div>
-                    <p class="text-sm text-gray-500">Fecha de nacimiento</p>
-                    <p class="text-gray-800">15/06/1998</p>
-                </div>
-            </section>
-            
-
-
-        </section>
-       
     
     </main>
+    <!-- Ventana crear reserva -->
 
-    <!-- Ventana crear usuario -->
-    <section id="ventana-crear-usuario" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
-        <!-- formulario crear usuario -->
-        <form  id="formulario-usuario" class="max-w-2xl w-full p-6 bg-white rounded-xl">
-            <h2  id="titulo-formulario-usuario" class="text-lg font-semibold mb-4">Crear empleado</h2>
-            <div class="flex flex-col">
-                <label>Rut</label>
-                <input id= "rut-usuario" name="rut" type="text" placeholder="12345678k" class="py-1.5 px-2 border border-gray-300 rounded-lg">
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 mt-2.5">
-                <div class="flex flex-col">
-                    <label>Nombre</label>
-                    <input type= "text" id= "nombre-usuario" name="nombre"  placeholder="Nombre" class="py-1.5 px-2 border border-gray-300 rounded-lg">
-                </div>
-                <div class="flex flex-col">
-                    <label>Apellidos</label>
-                    <input id="apellidos-usuario" name="apellidos" type="text" placeholder="Apellidos" class="py-1.5 px-2 border border-gray-300 rounded-lg">
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 mt-2.5">
-                <div class="flex flex-col">
-                    <label>Telefono</label>
-                    <input  id="telefono-usuario" name="telefono" type="tel" placeholder="+56963391573" class="py-1.5 px-2 border border-gray-300 rounded-lg">
-                </div>
-                <div class="flex flex-col">
-                    <label>Email</label>
-                    <input  id="email-usuario" name="email" type="email" placeholder="Example@gmail.com" class="py-1.5 px-2 border border-gray-300 rounded-lg">
-                </div>
-            </div>
-            <div class="flex flex-col mt-2.5">
-                <label>Contraseña</label>
-                <input id="contraseña-usuario" name="contraseña" type="password" placeholder="Contraseña" class="py-1.5 px-2 border border-gray-300 rounded-lg">
-            </div>
-
-            <section class="flex justify-end gap-2 mt-8">
-                <button id="btn-cancelar-usuario" type="button" class="py-1.5 px-4 bg-gray-300 text-gray-500 rounded-lg">Cancelar</button>
-                <button id="btn-confirmar-usuario"  type="submit" class="py-1.5 px-4 bg-green-800 text-white rounded-lg">Crear</button>
-            </section>
-
-        </form>
-    </section>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
     <script src="../assets/js/menu-lateral.js"></script>
-    <script src="../assets/js/cliente.js"></script>
-    <script src="../assets/js/validacion-cliente.js"></script>
+
+
 </body>
 </html>
