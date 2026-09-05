@@ -1,8 +1,6 @@
 // Variable Crear Usuario
 const ventanaCrearUsuario = document.getElementById("ventana-crear-usuario");
 const ventanaNutricionista = document.getElementById("ventana-nutricionista");
-const btnCrearUsuario = document.getElementById("btn-crear-usuario");
-const btnAgregarDia = document.getElementById("btn-agregar-dia");
 const contenedorDias = document.getElementById("contenedor-dias");
 const opcionesRol = document.querySelectorAll('input[name="rol"]');
 const mensajeUsuario = document.getElementById("mensaje-usuario");
@@ -22,9 +20,6 @@ const btnEliminarUsuario = document.getElementById("btn-eliminar-usuario");
 
 
 function limpiarFormularioUsuario() {
-    const formularioUsuario =
-        document.getElementById("formulario-usuario");
-
     formularioUsuario.reset();
 
     ventanaNutricionista.classList.add("hidden");
