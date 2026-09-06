@@ -41,8 +41,7 @@ $(document).ready(function(){
                 window.location.href = "../nutricionista/inicio.html";
 
             }else if(correo === "secretario@nutrivida.cl" && password === "Secretario123"){
-                mensaje.text("");
-                mensaje.addClass("text-red-500");
+                window.location.href = "../secretaria/inicio.html";
 
             }else{
                 mensaje.text("Correo o contraseña incorrectos");
