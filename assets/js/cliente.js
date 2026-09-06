@@ -21,9 +21,7 @@ const btnCancelarCliente = document.getElementById("btn-cancelar-usuario");
 
 function limpiarFormularioCliente() {
     formularioCliente.reset();
-    const validadorCliente =
-        $("#formulario-usuario").data("validator");
-
+    const validadorCliente = $("#formulario-usuario").data("validator");
     if (validadorCliente) {
         validadorCliente.resetForm();
     }
@@ -62,15 +60,13 @@ btnOcultarCliente.addEventListener("click", () => {
 });
 
 btnEliminarCliente.addEventListener("click", () => {
-    const confirmarEliminacion = confirm(
-        "¿Está seguro de eliminar este cliente?" );
+    const confirmarEliminacion = confirm( "¿Está seguro de eliminar este cliente?" );
     if (!confirmarEliminacion) {
         return;
     }
     clienteListado.classList.add("hidden");
     contenedorVerCliente.classList.add("hidden");
-    mensajeCliente.textContent =
-        "Cliente eliminado correctamente";
+    mensajeCliente.textContent = "Cliente eliminado correctamente";
     mensajeCliente.classList.remove("hidden");
     setTimeout(() => {
         mensajeCliente.classList.add("hidden");
