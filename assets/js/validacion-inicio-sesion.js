@@ -32,11 +32,7 @@ $(document).ready(function(){
             mensaje.removeClass("hidden text-red-500 text-emerald-700");
 
             if(correo === "admin@nutrivida.cl" && password === "Admin123"){
-                window.location.href = "../administrador/usuario.html";
-
-            }else if(correo === "cliente@nutrivida.cl" && password === "Cliente123"){
-                window.location.href = "./tus-reservas.html";
-
+                window.location.href = "../administrador/inicio.html";
             }else if(correo === "nutricionista@nutrivida.cl" && password === "Nutri123"){
                 window.location.href = "../nutricionista/inicio.html";
 
