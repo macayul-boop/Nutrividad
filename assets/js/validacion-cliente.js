@@ -60,29 +60,21 @@ $(document).ready(function (){
                 minlength: "Debe tener al menos 6 caracteres"
             }
         },
-
         errorClass: "text-red-500 text-sm mt-1",
 
         submitHandler: function () {
             ventanaCrearCliente.classList.add("hidden");
-
             if (modoEdicionCliente) {
-                mensajeCliente.textContent =
-                    "Cliente editado correctamente";
+                mensajeCliente.textContent ="Cliente editado correctamente";
             } else {
-                mensajeCliente.textContent =
-                    "Clientee creado correctamente";
+                mensajeCliente.textContent = "Clientee creado correctamente";
             }
             mensajeCliente.classList.remove("hidden");
-
             limpiarFormularioCliente();
-
             modoEdicionCliente = false;
-
             setTimeout(() => {
                 mensajeCliente.classList.add("hidden");
             }, 3000);
-
             return false;
         }
     });
